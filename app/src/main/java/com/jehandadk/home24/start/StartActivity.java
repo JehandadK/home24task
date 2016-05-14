@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.jehandadk.home24.R;
 import com.jehandadk.home24.api.IApiClient;
 import com.jehandadk.home24.base.BaseActivity;
+import com.jehandadk.home24.base.ICancellableTask;
 import com.jehandadk.home24.models.ArticleListResponse;
 import com.jehandadk.home24.selection.SelectionActivity;
 
@@ -19,10 +20,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Subscriber;
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class StartActivity extends BaseActivity {
+public class StartActivity extends BaseActivity implements ICancellableTask {
 
     private static final long DELAY = 200;
     private static final long DURATION = 2000;
@@ -30,6 +32,7 @@ public class StartActivity extends BaseActivity {
     IApiClient api;
     @BindView(R.id.img_logo)
     ImageView imgLogo;
+    Subscription subscription;
     private boolean animated = false;
 
     @Override
@@ -42,19 +45,19 @@ public class StartActivity extends BaseActivity {
 
     @OnClick(R.id.btn_start)
     public void loadData() {
-        onLoadingStarted();
-        api.getArticles(10)
+        onLoadingStarted(this);
+        subscription = api.getArticles(10)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<ArticleListResponse>() {
                     @Override
                     public void onCompleted() {
-                        onLoadingFinished();
+                        onLoadingFinished(StartActivity.this);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        onLoadingFinished();
+                        onLoadingFinished(StartActivity.this);
                         showError(getString(R.string.msg_err_internet));
                     }
 
@@ -101,5 +104,11 @@ public class StartActivity extends BaseActivity {
                 .setStartDelay(DELAY)
                 .setDuration(DURATION).setInterpolator(
                 new DecelerateInterpolator(1.2f)).start();
+    }
+
+    @Override
+    public void cancelled() {
+        if (subscription == null) return;
+        subscription.unsubscribe();
     }
 }
