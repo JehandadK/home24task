@@ -25,6 +25,7 @@
         <activity
             android:name=".selection.SelectionActivity"
             android:label="@string/title_activity_selection"
+            android:launchMode="singleTop"
             android:parentActivityName=".start.StartActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

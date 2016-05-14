@@ -47,8 +47,8 @@
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@id/btn_like"
         android:layout_toRightOf="@id/btn_dislike"
-        android:enabled="false"
-        android:text="@string/review" />
+        android:text="@string/review"
+        android:visibility="invisible" />
 
 
     <TextView

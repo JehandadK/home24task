@@ -14,5 +14,7 @@
     <string name="review">Review</string>
     <string name="like">Like</string>
     <string name="dislike">Dislike</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
 
 </resources>

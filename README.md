@@ -20,9 +20,10 @@ The activity names are analogous to names used in Task.
 
 # Review Screen
 
-- [ ] Reviews List
-- [ ] Reviews Grid
-- [ ] Reviews Switch from List to Grid
+- [X] Menu Icons for list and grid
+- [X] Reviews List
+- [X] Reviews Grid
+- [X] Reviews Switch from List to Grid
 
 # Optimizations
 

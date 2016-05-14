@@ -25,10 +25,6 @@ public abstract class BaseActivity extends AppCompatActivity implements LoadingL
         return new GsonBuilder().create();
     }
 
-    protected App getApp() {
-        return (App) getApplication();
-    }
-
     @Override
     protected void onPause() {
         super.onPause();
@@ -42,7 +38,6 @@ public abstract class BaseActivity extends AppCompatActivity implements LoadingL
         if (loaderCount.get() > 0) showProgressDialog();
         else hideProgressDialog();
     }
-
 
     @Override
     public void onLoadingStarted() {
@@ -72,6 +67,10 @@ public abstract class BaseActivity extends AppCompatActivity implements LoadingL
         mProgressDialog.setCancelable(true);
         mProgressDialog.setMessage(getString(R.string.msg_loading));
         mProgressDialog.show();
+    }
+
+    protected App getApp() {
+        return (App) getApplication();
     }
 
     protected MainComponent getMainComponent() {
