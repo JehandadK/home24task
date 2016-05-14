@@ -27,7 +27,7 @@ The activity names are analogous to names used in Task.
 
 # Optimizations
 
-- [ ] Use Gson factory
+- [X] Use Gson factory
 - [ ] Cancellable Rx Subscribers Abstraction
 - [ ] Use Parcel rather than Gson Serialization when passing data between activities
 - [ ] Create Error Handler and Rendering abstraction

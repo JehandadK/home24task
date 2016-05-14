@@ -1,6 +1,7 @@
 package com.jehandadk.home24.modules;
 
 import com.jehandadk.home24.BuildConfig;
+import com.jehandadk.home24.api.GsonFactory;
 import com.jehandadk.home24.api.IApiClient;
 
 import javax.inject.Singleton;
@@ -36,7 +37,7 @@ public class ApiModule {
         return new Retrofit.Builder()
                 .client(client)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(GsonFactory.getGson()))
                 .baseUrl(BuildConfig.ENDPOINT)
                 .build();
     }

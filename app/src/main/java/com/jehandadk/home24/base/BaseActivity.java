@@ -5,9 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.jehandadk.home24.App;
 import com.jehandadk.home24.R;
+import com.jehandadk.home24.api.GsonFactory;
 import com.jehandadk.home24.modules.MainComponent;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -22,7 +22,7 @@ public abstract class BaseActivity extends AppCompatActivity implements LoadingL
     private boolean isResumed = false;
 
     public static Gson getGson() {
-        return new GsonBuilder().create();
+        return GsonFactory.getGson();
     }
 
     @Override
