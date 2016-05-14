@@ -54,10 +54,10 @@ Work Log
 
 - 8:30 init
 - 8:45 README completed
-- 9:10 Latest common libs
+- 9:10 Latest common libs 40
 - 9:10 BREAK
 - 10:10 RESUME
-- 11:10 BREAK
+- 11:10 BREAK 40+60
 - 11:19 RESUME
-
+- 1:10 Completed basic requirements 40+60+110
 
