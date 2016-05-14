@@ -1,6 +1,11 @@
 package com.jehandadk.home24.start;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewCompat;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
 
 import com.jehandadk.home24.R;
 import com.jehandadk.home24.api.IApiClient;
@@ -10,6 +15,7 @@ import com.jehandadk.home24.selection.SelectionActivity;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Subscriber;
@@ -18,8 +24,13 @@ import rx.schedulers.Schedulers;
 
 public class StartActivity extends BaseActivity {
 
+    private static final long DELAY = 200;
+    private static final long DURATION = 2000;
     @Inject
     IApiClient api;
+    @BindView(R.id.img_logo)
+    ImageView imgLogo;
+    private boolean animated = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,5 +63,43 @@ public class StartActivity extends BaseActivity {
                         startActivity(SelectionActivity.newIntent(StartActivity.this, articleListResponse));
                     }
                 });
+    }
+
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        if (!hasFocus || animated) {
+            return;
+        }
+        animate();
+        super.onWindowFocusChanged(hasFocus);
+    }
+
+    private void animate() {
+        animateLogo();
+        animateInAllViews();
+    }
+
+    private void animateInAllViews() {
+        ViewGroup container = (ViewGroup) findViewById(R.id.container);
+
+        for (int i = 0; i < container.getChildCount(); i++) {
+            View v = container.getChildAt(i);
+            if (v.getId() == imgLogo.getId()) continue;
+            ViewCompat.animate(v)
+                    .scaleY(1).scaleX(1)
+                    .translationY(50).alpha(1)
+                    .setStartDelay(DELAY)
+                    .setDuration(DURATION).
+                    setInterpolator(new DecelerateInterpolator()).start();
+        }
+    }
+
+    private void animateLogo() {
+        ViewCompat.animate(imgLogo)
+                .translationY(-100)
+                .setStartDelay(DELAY)
+                .setDuration(DURATION).setInterpolator(
+                new DecelerateInterpolator(1.2f)).start();
     }
 }

@@ -5,9 +5,9 @@ The activity names are analogous to names used in Task.
 
 - [X] Button to Load Articles
 - [X] Load Articles
-- [ ] Avoid Cold Start
-- [ ] Animate logo
-- [ ] Full Screen
+- [X] Avoid Cold Start
+- [X] Animate logo
+- [X] Full Screen
 
 # Selection Screen
 
