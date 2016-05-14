@@ -2,4 +2,11 @@
     <string name="app_name">Home24</string>
     <string name="title_activity_selection">SelectionActivity</string>
     <string name="title_activity_reviews">ReviewsActivity</string>
+
+    <string name="msg_retry">Retry</string>
+    <string name="msg_loading">Loading...</string>
+    <string name="msg_err_unknown">Ooops, Something went wrong!</string>
+    <string name="msg_err_internet">Please check your internet connection.</string>
+    <string name="txt_start">START</string>
+
 </resources>

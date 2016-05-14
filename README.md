@@ -3,8 +3,8 @@ The activity names are analogous to names used in Task.
 
 # Start Screen
 
-- [ ] Button to Load Articles
-- [ ] Load Articles
+- [X] Button to Load Articles
+- [X] Load Articles
 - [ ] Avoid Cold Start
 - [ ] Animate logo
 - [ ] Full Screen
@@ -24,6 +24,16 @@ The activity names are analogous to names used in Task.
 - [ ] Reviews Grid
 - [ ] Reviews Switch from List to Grid
 
+# Optimizations
+
+- [ ] Use Gson factory
+- [ ] Cancellable Rx Subscribers Abstraction
+- [ ] Use Parcel rather than Gson Serialization when passing data between activities
+- [ ] Create Error Handler and Rendering abstraction
+
+# Stuff
+- [ ] Logging framework
+
 
 # Libraries
 - [ ] RoboGuice
@@ -34,6 +44,8 @@ The activity names are analogous to names used in Task.
 - [X] Glide
 - [X] RxAndroid
 - [ ] RetroLambda
+- [ ] Hugo
+- [ ] LeakCanary
 
 
 
@@ -44,3 +56,7 @@ Work Log
 - 9:10 Latest common libs
 - 9:10 BREAK
 - 10:10 RESUME
+- 11:10 BREAK
+- 11:19 RESUME
+
+
