@@ -11,11 +11,11 @@ The activity names are analogous to names used in Task.
 
 # Selection Screen
 
-- [ ] Display Articles for review
-- [ ] Display Buttons Like and Dislike
-- [ ] Cycle Articles
-- [ ] Reviews complete placeholder
-- [ ] Review button
+- [X] Display Articles for review
+- [X] Display Buttons Like and Dislike
+- [X] Cycle Articles
+- [X] Reviews complete placeholder
+- [X] Review button
 - [ ] Articles Counter using TextSwitcher
 
 # Review Screen

@@ -12,4 +12,61 @@
     tools:context="com.jehandadk.home24.selection.SelectionActivity"
     tools:showIn="@layout/activity_selection">
 
+
+    <TextView
+        android:id="@+id/txt_reviews_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/example_reviews_like_counter"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/btn_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/like" />
+
+    <Button
+        android:id="@+id/btn_dislike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/dislike" />
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/btn_like"
+        android:layout_toRightOf="@id/btn_dislike"
+        android:enabled="false"
+        android:text="@string/review" />
+
+
+    <TextView
+        android:id="@+id/txt_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_like"
+        android:layout_below="@+id/txt_reviews_counter"
+        android:gravity="center"
+        android:text="@string/msg_no_more_reviews_left"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/img_article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_like"
+        android:layout_below="@+id/txt_reviews_counter"
+        android:scaleType="fitCenter" />
+
 </RelativeLayout>

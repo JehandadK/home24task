@@ -9,4 +9,10 @@
     <string name="msg_err_internet">Please check your internet connection.</string>
     <string name="txt_start">START</string>
 
+    <string name="example_reviews_like_counter">3/10</string>
+    <string name="msg_no_more_reviews_left">No More Reviews Left!</string>
+    <string name="review">Review</string>
+    <string name="like">Like</string>
+    <string name="dislike">Dislike</string>
+
 </resources>

@@ -1,15 +1,27 @@
 package com.jehandadk.home24.reviews;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.jehandadk.home24.R;
+import com.jehandadk.home24.base.BaseActivity;
+import com.jehandadk.home24.models.Article;
 
-public class ReviewsActivity extends AppCompatActivity {
+import java.util.List;
+
+
+public class ReviewsActivity extends BaseActivity {
+
+    public static final String KEY_ARTICLE_LIST = "ARTICLE_LIST";
+    private List<Article> articles;
+
+    public static Intent newIntent(Activity act, List<Article> data) {
+        Intent intent = new Intent(act, ReviewsActivity.class);
+        intent.putExtra(KEY_ARTICLE_LIST, getGson().toJson(data));
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,15 +29,6 @@ public class ReviewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reviews);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
