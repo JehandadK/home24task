@@ -7,6 +7,7 @@ The activity names are analogous to names used in Task.
 - [ ] Load Articles
 - [ ] Avoid Cold Start
 - [ ] Animate logo
+- [ ] Full Screen
 
 # Selection Screen
 
@@ -15,6 +16,7 @@ The activity names are analogous to names used in Task.
 - [ ] Cycle Articles
 - [ ] Reviews complete placeholder
 - [ ] Review button
+- [ ] Articles Counter using TextSwitcher
 
 # Review Screen
 
@@ -39,4 +41,6 @@ Work Log
 
 - 8:30 init
 - 8:45 README completed
-- 8:45 README completed
+- 9:10 Latest common libs
+- 9:10 BREAK
+- 10:10 RESUME

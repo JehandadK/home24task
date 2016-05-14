@@ -1,9 +1,11 @@
-package com.jehandadk.home24;
+package com.jehandadk.home24.start;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-public class StartActivity extends AppCompatActivity {
+import com.jehandadk.home24.R;
+import com.jehandadk.home24.base.BaseActivity;
+
+public class StartActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
